@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "Chronos",
+            "question": "According to the paper 'Chronos', what is the primary goal of the proposed framework?",
+            "answer": "The primary goal of Chronos is to develop a simple yet effective framework for pretrained probabilistic time series models, which can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks."
+        },
+        {
+            "paper_title": "Chronos",
+            "question": "How does the Chronos framework tokenize time series values, as described in the paper?",
+            "answer": "Chronos tokenizes time series values by first scaling and then quantizing observations into a fixed number of bins. The scaling is done using mean scaling, which normalizes individual entries of the time series by the mean of the absolute values in the historical context. The quantization is done by selecting B bin centers and B-1 edges, and mapping the real values to discrete tokens based on these bins."
+        },
+        {
+            "paper_title": "Chronos",
+            "question": "What is the significance of the synthetic dataset generated via Gaussian processes in the Chronos framework, as mentioned in the paper?",
+            "answer": "The synthetic dataset generated via Gaussian processes is used to improve the generalization of the Chronos models. By combining this synthetic data with real data, the models can learn to recognize patterns and relationships in the data that are not present in the real data alone, leading to improved zero-shot performance on unseen forecasting tasks."
+        },
+        {
+            "paper_title": "Chronos",
+            "question": "How does the Chronos framework differ from other LLM-based forecasting models, such as PromptCast and LLMTime, as discussed in the paper?",
+            "answer": "Chronos differs from other LLM-based forecasting models in that it trains language models from scratch on a large collection of time series, tokenized via scaling and quantization, without requiring prompt engineering or fine-tuning for each new task. In contrast, PromptCast and LLMTime rely on pretrained LLMs and require dataset-specific templates or fine-tuning for each new task."
+        },
+        {
+            "paper_title": "Chronos",
+            "question": "What is the result of the comprehensive evaluation of Chronos models on 42 datasets, as reported in the paper?",
+            "answer": "The comprehensive evaluation of Chronos models on 42 datasets establishes Chronos as a benchmark for both in-domain and zero-shot forecasting, surpassing both traditional models and task-specific deep learning approaches. Chronos achieves impressive zero-shot forecasting performance out of the box, without necessitating task-specific adjustments, and its accuracy, coupled with its relatively modest model size, positions it as a preferable alternative to larger, more computationally demanding models for zero-shot forecasting applications."
+        }
+    ]
+}

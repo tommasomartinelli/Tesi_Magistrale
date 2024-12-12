@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "LagLLama",
+            "question": "What is the primary goal of the Lag-Llama model, as described in the abstract of the paper?",
+            "answer": "The primary goal of Lag-Llama is to develop a foundation model for univariate probabilistic time series forecasting that can demonstrate strong zero-shot generalization capabilities and state-of-the-art performance on downstream datasets across domains."
+        },
+        {
+            "paper_title": "LagLLama",
+            "question": "How does the tokenization scheme of Lag-Llama work, as described in Section 4.1 of the paper?",
+            "answer": "The tokenization scheme of Lag-Llama involves constructing lagged features from the prior values of the time series, using a specified set of lag indices that include quarterly, monthly, weekly, daily, hourly, and second-level frequencies. Additionally, date-time features are added to provide information about the frequency of the time series."
+        },
+        {
+            "paper_title": "LagLLama",
+            "question": "What is the architecture of Lag-Llama, as described in Section 4.2 of the paper?",
+            "answer": "Lag-Llama's architecture is based on a decoder-only transformer-based architecture, similar to LLaMA. The model consists of M decoder layers, and incorporates pre-normalization via RMSNorm and Rotary Positional Encoding at each attention layer's query and key representations."
+        },
+        {
+            "paper_title": "LagLLama",
+            "question": "What is the purpose of the distribution head in Lag-Llama, as described in Section 4.3 of the paper?",
+            "answer": "The distribution head is a distinct layer that projects the model's features to the parameters of a probability distribution. In the paper, a Student's t-distribution is used, and the model outputs the three parameters corresponding to this distribution, namely its degrees of freedom, mean, and scale."
+        },
+        {
+            "paper_title": "LagLLama",
+            "question": "How does Lag-Llama handle the diversity of time series data in the pretraining corpus, as described in Section 5.1 of the paper?",
+            "answer": "Lag-Llama handles the diversity of time series data in the pretraining corpus by using a stratified sampling approach, where the datasets in the corpus are weighed by the amount of total number of series. Additionally, time series augmentation techniques such as Freq-Mix and Freq-Mask are used to reduce overfitting."
+        }
+    ]
+}

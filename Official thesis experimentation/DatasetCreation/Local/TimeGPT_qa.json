@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "TimeGPT",
+            "question": "According to the abstract of the TimeGPT paper, what is the main contribution of the paper?",
+            "answer": "The main contribution of the paper is the introduction of TimeGPT, the first foundation model for time series, capable of generating accurate predictions for diverse datasets not seen during training, and demonstrating that TimeGPT zero-shot inference excels in performance, efficiency, and simplicity."
+        },
+        {
+            "paper_title": "TimeGPT",
+            "question": "What is the architecture of TimeGPT, as described in Section 5.1 of the paper?",
+            "answer": "TimeGPT is a Transformer-based time series model with self-attention mechanisms, taking a window of historical values to produce the forecast, adding local positional encoding to enrich the input, and consisting of an encoder-decoder structure with multiple layers, each with residual connections and layer normalization."
+        },
+        {
+            "paper_title": "TimeGPT",
+            "question": "What is the size of the training dataset used for TimeGPT, as mentioned in Section 5.2 of the paper?",
+            "answer": "TimeGPT was trained on a dataset collectively encompassing over 100 billion data points, incorporating time series from a broad array of domains, including finance, economics, demographics, healthcare, weather, IoT sensor data, energy, web traffic, sales, transport, and banking."
+        },
+        {
+            "paper_title": "TimeGPT",
+            "question": "What is the evaluation metric used to compare the performance of TimeGPT with other models, as described in Section 6 of the paper?",
+            "answer": "The evaluation metrics used are the relative Mean Absolute Error (rMAE) and the relative Root Mean Square Error (rRMSE), both normalized against the performance of the Seasonal Naive model, to provide a comprehensive performance analysis and enable comparisons across different frequencies."
+        },
+        {
+            "paper_title": "TimeGPT",
+            "question": "What is the average GPU inference speed of TimeGPT for zero-shot inference, as reported in Section 6.3 of the paper?",
+            "answer": "The average GPU inference speed of TimeGPT for zero-shot inference is 0.6 milliseconds per series, which is significantly faster than traditional statistical methods and global models, and nearly mirrors that of the simple Seasonal Naive model."
+        }
+    ]
+}

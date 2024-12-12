@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "AnomalyBERT",
+            "question": "What is the main contribution of the AnomalyBERT paper, as described in the abstract?",
+            "answer": "The main contribution of the AnomalyBERT paper is a self-supervised method for time series anomaly detection using a suitable data degradation scheme to train a Transformer-based model, which shows a great capability of detecting anomalies contained in complex time series and surpasses previous state-of-the-art methods on five real-world benchmarks."
+        },
+        {
+            "paper_title": "AnomalyBERT",
+            "question": "What is the purpose of the data degradation scheme in AnomalyBERT, as described in Section 3.2?",
+            "answer": "The data degradation scheme is used to create degraded inputs by replacing a portion of a window with an outlier in the training phase, which helps the model learn to distinguish anomalous behavior and detect varied unnatural sequences in real-world time series."
+        },
+        {
+            "paper_title": "AnomalyBERT",
+            "question": "What are the four types of synthetic outliers proposed in the AnomalyBERT paper, as described in Section 3.2?",
+            "answer": "The four types of synthetic outliers proposed in the AnomalyBERT paper are: soft replacement, uniform replacement, peak noise, and length adjustment."
+        },
+        {
+            "paper_title": "AnomalyBERT",
+            "question": "What is the purpose of the 1D relative position bias in the AnomalyBERT model, as described in Section 3.1?",
+            "answer": "The 1D relative position bias is used to consider the relative positions between features in a window, which helps the model understand the temporal context of the data."
+        },
+        {
+            "paper_title": "AnomalyBERT",
+            "question": "What is the evaluation metric used to compare the performance of AnomalyBERT with previous works, as described in Section 4.2?",
+            "answer": "The evaluation metric used to compare the performance of AnomalyBERT with previous works is the F1-score (F1) over the ground-truth labels and anomaly predictions, as well as the F1-score after point adjustment (F1PA)."
+        }
+    ]
+}

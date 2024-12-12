@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "Timesfm",
+            "question": "What is the main contribution of the paper 'Timesfm'?",
+            "answer": "The main contribution of the paper 'Timesfm' is the design of a time-series foundation model for forecasting that achieves close to state-of-the-art zero-shot performance on a variety of public datasets, without requiring additional training or fine-tuning."
+        },
+        {
+            "paper_title": "Timesfm",
+            "question": "What is the composition of the pretraining dataset used in the paper 'Timesfm'?",
+            "answer": "The pretraining dataset used in the paper 'Timesfm' consists of a mixture of real-world and synthetic data, including Google Trends, Wiki Pageview statistics, and synthetic time-series data generated using traditional statistical models, totaling around 100 billion timepoints."
+        },
+        {
+            "paper_title": "Timesfm",
+            "question": "What is the architecture of the TimesFM model, and how does it differ from other models like PatchTST?",
+            "answer": "The TimesFM model is a decoder-only foundation model that uses a transformer architecture with input patching, and is trained in decoder-only mode. This differs from other models like PatchTST, which is an encoder-decoder model that requires pretraining on all possible context lengths and horizon lengths."
+        },
+        {
+            "paper_title": "Timesfm",
+            "question": "How does the performance of TimesFM compare to other baselines on the Monash and Darts datasets?",
+            "answer": "According to the paper, TimesFM achieves state-of-the-art performance on the Monash and Darts datasets, outperforming other baselines like DeepAR, N-BEATS, and llmtime. On the Monash dataset, TimesFM achieves a scaled MAE of 0.6846, while on the Darts dataset, it achieves a scaled MAE of 0.5767."
+        },
+        {
+            "paper_title": "Timesfm",
+            "question": "What are some potential limitations and future directions for the TimesFM model, as discussed in the paper?",
+            "answer": "The paper discusses several potential limitations and future directions for the TimesFM model, including the need for prompt tuning techniques, probabilistic forecasting, covariate handling, and interpretability. The authors also suggest that future work could involve fine-tuning the model on downstream tasks, exploring alternative architectures, and investigating the use of date features and synthetic data."
+        }
+    ]
+}

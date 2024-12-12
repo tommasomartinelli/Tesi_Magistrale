@@ -1,0 +1,145 @@
+
+-Goal-
+Given a text document that is potentially relevant to this activity, first identify all entities needed from the text in order to capture the information and ideas in the text.
+Next, report all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: Suggest several labels or categories for the entity. The categories should not be specific, but should be as general as possible.
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity
+Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+3. Return output in The primary language of the provided text is English. as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+
+4. If you have to translate into The primary language of the provided text is English., just translate the descriptions, nothing else!
+
+5. When finished, output {completion_delimiter}.
+
+-Examples-
+######################
+
+Example 1:
+
+text:
+. And don't forget,
+we're not supposed to know about the Stone or Fluffy. That'll take a lot
+of explaining."
+Hermione looked convinced, but Ron didn't.
+"If we just do a bit of poking around --"
+"No," said Harry flatly, "we've done enough poking around."
+He pulled a map of Jupiter toward him and started to learn the names of
+its moons.
+The following morning, notes were delivered to Harry, Hermione, and
+Neville at the breakfast table. They were all the same:
+197
+
+Your detention will take place at eleven o'clock tonight. Meet Mr. Filch
+in the entrance hall.
+Professor McGonagall Harry had forgotten they still had detentions to do
+in the furor over the points they'd lost. He half expected Hermione to
+complain that this was a whole night of studying lost, but she didn't
+say a word. Like Harry, she felt they deserved what they
+------------------------
+output:
+("entity"{tuple_delimiter}HARRY POTTER{tuple_delimiter}PERSON{tuple_delimiter}Harry Potter is a student at Hogwarts School of Witchcraft and Wizardry, who is learning about the names of Jupiter's moons and has a detention with Mr. Filch)
+{record_delimiter}
+("entity"{tuple_delimiter}HERMIONE GRANGER{tuple_delimiter}PERSON{tuple_delimiter}Hermione Granger is a student at Hogwarts School of Witchcraft and Wizardry, who is convinced not to know about the Stone or Fluffy and has a detention with Mr. Filch)
+{record_delimiter}
+("entity"{tuple_delimiter}RON WEASLEY{tuple_delimiter}PERSON{tuple_delimiter}Ron Weasley is a student at Hogwarts School of Witchcraft and Wizardry, who is skeptical about not knowing about the Stone or Fluffy and has a detention with Mr. Filch)
+{record_delimiter}
+("entity"{tuple_delimiter}NEVILLE LONGBOTTOM{tuple_delimiter}PERSON{tuple_delimiter}Neville Longbottom is a student at Hogwarts School of Witchcraft and Wizardry, who received a detention note from Professor McGonagall)
+{record_delimiter}
+("entity"{tuple_delimiter}JUPITER{tuple_delimiter}ASTRONOMICAL BODY{tuple_delimiter}Jupiter is a planet in the solar system, whose moons Harry Potter is learning about)
+{record_delimiter}
+("entity"{tuple_delimiter}MR. FILCH{tuple_delimiter}PERSON{tuple_delimiter}Mr. Filch is a Hogwarts staff member, who is giving Harry, Hermione, and Neville detentions)
+{record_delimiter}
+("entity"{tuple_delimiter}PROFESSOR MCGONAGALL{tuple_delimiter}PERSON{tuple_delimiter}Professor McGonagall is a Hogwarts staff member, who reminded Harry about his detention)
+{record_delimiter}
+("entity"{tuple_delimiter}HOGWARTS SCHOOL OF WITCHCRAFT AND WIZARDRY{tuple_delimiter}ORGANIZATION{tuple_delimiter}Hogwarts School of Witchcraft and Wizardry is a school for young wizards and witches, where Harry, Hermione, and Neville are students)
+{record_delimiter}
+("relationship"{tuple_delimiter}HARRY POTTER{tuple_delimiter}JUPITER{tuple_delimiter}Harry Potter is learning about the names of Jupiter's moons{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}HERMIONE GRANGER{tuple_delimiter}HARRY POTTER{tuple_delimiter}Hermione Granger and Harry Potter are friends and classmates{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}RON WEASLEY{tuple_delimiter}HARRY POTTER{tuple_delimiter}Ron Weasley and Harry Potter are friends and classmates{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}NEVILLE LONGBOTTOM{tuple_delimiter}HARRY POTTER{tuple_delimiter}Neville Longbottom and Harry Potter are friends and classmates{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}NEVILLE LONGBOTTOM{tuple_delimiter}HERMIONE GRANGER{tuple_delimiter}Neville Longbottom and Hermione Granger are friends and classmates{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}NEVILLE LONGBOTTOM{tuple_delimiter}RON WEASLEY{tuple_delimiter}Neville Longbottom and Ron Weasley are friends and classmates{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}HARRY POTTER{tuple_delimiter}MR. FILCH{tuple_delimiter}Harry Potter has a detention with Mr. Filch{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}HERMIONE GRANGER{tuple_delimiter}MR. FILCH{tuple_delimiter}Hermione Granger has a detention with Mr. Filch{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}RON WEASLEY{tuple_delimiter}MR. FILCH{tuple_delimiter}Ron Weasley has a detention with Mr. Filch{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}NEVILLE LONGBOTTOM{tuple_delimiter}MR. FILCH{tuple_delimiter}Neville Longbottom has a detention with Mr. Filch{tuple_delimiter}8)
+{completion_delimiter}
+#############################
+
+
+Example 2:
+
+text:
+ give us some protection forever. It is in your very skin. Quirrell,
+full of hatred, greed, and ambition, sharing his soul with Voldemort,
+could not touch you for this reason. It was agony to touch a person
+marked by something so good."
+Dumbledore now became very interested in a bird out on the windowsill,
+which gave Harry time to dry his eyes on the sheet. When he had found
+his voice again, Harry said, "And the invisibility cloak - do you know
+who sent it to me?"
+"Ah - your father happened to leave it in my possession, and I thought
+you might like it." Dumbledore's eyes twinkled. "Useful things... your
+father used it mainly for sneaking off to the kitchens to steal food
+when he was here."
+"And there's something else..."
+"Fire away."
+"Quirrell said Snape --"
+"Professor Snape, Harry." "Yes, him -- Quirrell said he hates
+------------------------
+output:
+("entity"{tuple_delimiter}QUIRRELL{tuple_delimiter}PERSON{tuple_delimiter}Quirrell is a person full of hatred, greed, and ambition, sharing his soul with Voldemort)
+{record_delimiter}
+("entity"{tuple_delimiter}VOLDEMORT{tuple_delimiter}PERSON{tuple_delimiter}Voldemort is a dark wizard whose soul is shared with Quirrell)
+{record_delimiter}
+("entity"{tuple_delimiter}DUMBLEDORE{tuple_delimiter}PERSON{tuple_delimiter}Dumbledore is a wise and kind wizard who is interested in Harry's well-being)
+{record_delimiter}
+("entity"{tuple_delimiter}HARRY{tuple_delimiter}PERSON{tuple_delimiter}Harry is a young wizard who is the son of James Potter and has an invisibility cloak)
+{record_delimiter}
+("entity"{tuple_delimiter}JAMES POTTER{tuple_delimiter}PERSON{tuple_delimiter}James Potter is Harry's father who left an invisibility cloak in Dumbledore's possession)
+{record_delimiter}
+("entity"{tuple_delimiter}QUIRRELL{tuple_delimiter}VOLDEMORT{tuple_delimiter}Quirrell shares his soul with Voldemort{tuple_delimiter}9)
+{record_delimiter}
+("entity"{tuple_delimiter}QUIRRELL{tuple_delimiter}HARRY{tuple_delimiter}Quirrell tried to touch Harry, but was unable to due to Harry's inherent goodness{tuple_delimiter}8)
+{record_delimiter}
+("entity"{tuple_delimiter}DUMBLEDORE{tuple_delimiter}HARRY{tuple_delimiter}Dumbledore is interested in Harry's well-being and helps him to dry his eyes{tuple_delimiter}8)
+{record_delimiter}
+("entity"{tuple_delimiter}DUMBLEDORE{tuple_delimiter}JAMES POTTER{tuple_delimiter}Dumbledore has possession of an invisibility cloak left by James Potter{tuple_delimiter}8)
+{record_delimiter}
+("entity"{tuple_delimiter}HARRY{tuple_delimiter}JAMES POTTER{tuple_delimiter}Harry's father, James Potter, left him an invisibility cloak{tuple_delimiter}8)
+{record_delimiter}
+("entity"{tuple_delimiter}QUIRRELL{tuple_delimiter}SNAPE{tuple_delimiter}Quirrell said that Snape hates him{tuple_delimiter}7)
+{record_delimiter}
+("entity"{tuple_delimiter}SNAPE{tuple_delimiter}QUIRRELL{tuple_delimiter}Quirrell said that Snape hates him{tuple_delimiter}7)
+{completion_delimiter}
+#############################
+
+
+
+-Real Data-
+######################
+text: {input_text}
+######################
+output:

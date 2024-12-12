@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "TranAD",
+            "question": "What is the proposed model in the paper titled 'TranAD' and what are its key features?",
+            "answer": "The proposed model is TranAD, a deep transformer network based anomaly detection and diagnosis model that uses attention-based sequence encoders to swiftly perform inference with the knowledge of the broader temporal trends in the data. TranAD uses focus score-based self-conditioning to enable robust multi-modal feature extraction and adversarial training to gain stability. Additionally, model-agnostic meta learning (MAML) allows us to train the model using limited data."
+        },
+        {
+            "paper_title": "TranAD",
+            "question": "What is the problem formulation for anomaly detection and diagnosis in the paper 'TranAD'?",
+            "answer": "The problem formulation for anomaly detection is to predict Y = {𝑦1, . . . , 𝑦 ˆ 𝑇}, where we use 𝑦𝑡 ∈ {0, 1} to denote whether the datapoint at the 𝑡-th timestamp of the test set is anomalous (1 denotes an anomalous datapoint). The problem formulation for anomaly diagnosis is to predict *Y = {𝑦1, . . . , 𝑦 ˆ 𝑇}, where 𝑦𝑡 ∈ {0, 1}𝑚 to denote which of the modes of the datapoint at the 𝑡-th timestamp are anomalous."
+        },
+        {
+            "paper_title": "TranAD",
+            "question": "What is the architecture of the neural network used in TranAD, as shown in Figure 1?",
+            "answer": "The architecture of the neural network used in TranAD consists of two transformer encoders and two decoders. The first encoder performs multi-head self-attention operations to capture temporal trends within the input sequences. The window encoder uses this to create an encoded representation of the input window, which is then passed to two decoders to create its reconstruction."
+        },
+        {
+            "paper_title": "TranAD",
+            "question": "What is the two-phase adversarial training process in TranAD, as described in Algorithm 1?",
+            "answer": "The two-phase adversarial training process in TranAD consists of two phases. In the first phase, the model aims to generate an approximate reconstruction of the input window. In the second phase, the model uses the reconstruction loss for the first decoder as a focus score to modify the attention weights and generate a more accurate reconstruction of the input window."
+        },
+        {
+            "paper_title": "TranAD",
+            "question": "What are the results of the ablation study in Table 6, and what do they indicate about the importance of each component of the TranAD model?",
+            "answer": "The ablation study in Table 6 shows that replacing the transformer-based encoder-decoder has the highest performance drop of nearly 11% in terms of the F1 score. Removing the self-conditioning results in an average drop in F1 scores of 6%. Removing the two-phase adversarial training mainly affects SMD and WADI datasets, with an average drop in F1 score of 5%. Not having the meta-learning in the model has little effect on the F1 scores (≈ 1%), but leads to a nearly 12% drop in F1* scores. These results indicate that each component of the TranAD model is important for its performance, and that the transformer-based encoder-decoder and self-conditioning are particularly crucial."
+        }
+    ]
+}

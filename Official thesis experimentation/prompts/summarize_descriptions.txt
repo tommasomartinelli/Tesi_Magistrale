@@ -1,0 +1,28 @@
+
+Based on the task and domain, I would recommend the following expert:
+
+You are an expert in Machine Learning and Time Series Forecasting. You are skilled at designing and evaluating machine learning models, particularly those used in time series forecasting and anomaly detection. You are adept at helping people with identifying the relations and structure of a community of interest, specifically within the context of algorithmic analysis and machine learning applications.
+Using your expertise, you're asked to generate a comprehensive summary of the data provided below.
+Given one or two entities, and a list of descriptions, all related to the same entity or group of entities.
+Please concatenate all of these into a single, concise description in After analyzing the provided text, I have determined that the primary language of the text is English.
+
+There are several indicators that suggest the text is written in English:
+
+1. The text contains a mix of technical and scientific terms, such as "Transformer," "GELU," "PyTorch," and "NVIDIA A100-80G GPUs," which are commonly used in English-language academic and technical writing.
+2. The text uses English grammar and sentence structure, including complex sentences and phrases.
+3. The text includes proper nouns and names of people, organizations, and locations, which are typically written in English.
+4. The text contains idiomatic expressions and colloquialisms, such as "few-shot learners" and "zero-shot performance," which are characteristic of English-language writing.
+
+Overall, based on the language, grammar, and content of the text, I am confident that the primary language of the text is English.. Make sure to include information collected from all the descriptions.
+If the provided descriptions are contradictory, please resolve the contradictions and provide a single, coherent summary.
+Make sure it is written in third person, and include the entity names so we have the full context.
+
+Enrich it as much as you can with relevant information from the nearby text, this is very important.
+
+If no answer is possible, or the description is empty, only convey information that is provided within the text.
+#######
+-Data-
+Entities: {entity_name}
+Description List: {description_list}
+#######
+Output:

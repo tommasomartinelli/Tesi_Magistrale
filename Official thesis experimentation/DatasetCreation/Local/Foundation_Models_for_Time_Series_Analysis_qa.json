@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "Foundation_Models_for_Time_Series_Analysis",
+            "question": "According to the paper 'Foundation Models for Time Series Analysis: A Tutorial and Survey', what is the primary motivation behind the use of deep learning and transformers in time series analysis?",
+            "answer": "The primary motivation behind the use of deep learning and transformers in time series analysis lies in their ability to automatically learn comprehensive representations from raw data, thus capturing complex nonlinear relationships and temporal dependencies without the need for manual feature engineering."
+        },
+        {
+            "paper_title": "Foundation_Models_for_Time_Series_Analysis",
+            "question": "What is the main contribution of the paper 'Foundation Models for Time Series Analysis: A Tutorial and Survey' in terms of taxonomy?",
+            "answer": "The paper introduces a novel taxonomy that offers a thorough analysis from a methodological standpoint on Time Series Foundation Models (TSFMs), enabling a full understanding of the mechanism on why and how foundation models show great potential for time series analysis."
+        },
+        {
+            "paper_title": "Foundation_Models_for_Time_Series_Analysis",
+            "question": "According to the paper 'Foundation Models for Time Series Analysis: A Tutorial and Survey', what is the primary difference between the proposed taxonomy and previous taxonomies?",
+            "answer": "The primary difference between the proposed taxonomy and previous taxonomies is that the proposed taxonomy delves deeper into the foundation models from the methodology perspective, with a keen focus on their architectural designs, pre-training, and adaptation techniques."
+        },
+        {
+            "paper_title": "Foundation_Models_for_Time_Series_Analysis",
+            "question": "What is the main advantage of using pre-trained models from other domains, such as large language, vision, and acoustic models, in time series analysis?",
+            "answer": "The main advantage of using pre-trained models from other domains is that they can be adapted to process non-linguistic datasets by activating their inherent capabilities, and they can be fine-tuned for specific tasks without requiring large amounts of task-specific data."
+        },
+        {
+            "paper_title": "Foundation_Models_for_Time_Series_Analysis",
+            "question": "According to the paper 'Foundation Models for Time Series Analysis: A Tutorial and Survey', what is the primary benefit of using multi-modal time series analysis?",
+            "answer": "The primary benefit of using multi-modal time series analysis is that it can provide useful information to enhance the model capability, especially in challenging downstream tasks in finance and healthcare domains, by aligning the embedding of different modalities under a self-supervised contrastive learning framework."
+        }
+    ]
+}

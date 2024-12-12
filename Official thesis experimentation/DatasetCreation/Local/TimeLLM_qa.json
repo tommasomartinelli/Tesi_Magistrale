@@ -1,0 +1,33 @@
+{
+    "model_info": {
+        "model_name": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+        "type": "ai"
+    },
+    "examples": [
+        {
+            "paper_title": "TimeLLM",
+            "question": "According to the abstract of the paper 'TimeLLM', what are the benefits of leveraging large language models (LLMs) for time series forecasting?",
+            "answer": "The benefits of leveraging LLMs for time series forecasting include generalizability, data efficiency, reasoning, multimodal knowledge, and easy optimization. LLMs have demonstrated a remarkable capability for few-shot and zero-shot transfer learning, which suggests their potential for generalizable forecasting across domains without requiring per-task retraining from scratch."
+        },
+        {
+            "paper_title": "TimeLLM",
+            "question": "What is the main idea behind the proposed framework TIME-LLM, as described in the paper?",
+            "answer": "The main idea behind TIME-LLM is to reprogram the input time series into text prototype representations that are more naturally suited to language models' capabilities, and then use a pre-trained and frozen large language model to generate forecasts. This approach allows for the effective alignment of the modalities of time series data and natural language."
+        },
+        {
+            "paper_title": "TimeLLM",
+            "question": "How does the patch reprogramming process work in TIME-LLM, as described in Section 3.1 of the paper?",
+            "answer": "The patch reprogramming process in TIME-LLM involves reprogramming patch embeddings into the source data representation space to align the modalities of time series and natural language. This is done using a multi-head cross-attention layer, which defines query matrices, key matrices, and value matrices to reprogram time series patches in each attention head."
+        },
+        {
+            "paper_title": "TimeLLM",
+            "question": "What are the three pivotal components for constructing effective prompts in TIME-LLM, as described in the paper?",
+            "answer": "The three pivotal components for constructing effective prompts in TIME-LLM are: (1) dataset context, which furnishes the LLM with essential background information concerning the input time series; (2) task instruction, which serves as a crucial guide for the LLM in the transformation of patch embeddings for specific tasks; and (3) input statistics, which enrich the input time series with additional crucial statistics, such as trends and lags, to facilitate pattern recognition and reasoning."
+        },
+        {
+            "paper_title": "TimeLLM",
+            "question": "What is the significance of the output projection step in TIME-LLM, as described in Section 3.1 of the paper?",
+            "answer": "The output projection step in TIME-LLM is significant because it allows for the derivation of the final forecasts from the output representations obtained from the frozen LLM. This is done by flattening and linearly projecting the output representations to obtain the final forecasts."
+        }
+    ]
+}
