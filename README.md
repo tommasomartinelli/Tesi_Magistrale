@@ -18,7 +18,7 @@ The repository includes:
 3. [Technologies Used](#technologies-used)
 4. [Results](#results)
 5. [How to Perform Similar Tests](#how-to-perform-similar-tests)
-6. [References](#references)
+
 
 ---
 
